@@ -1,0 +1,36 @@
+{
+  "name": "vscode-sort-json",
+  "version": "1.0.0",
+  "description": "Sorts the keys within JSON objects",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "publisher": "richie5um",
+  "author": "Rich Somerfield",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "vscode": "0.10.x",
+    "mocha": "~2.3.3"
+  },
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:sortJSON.sortJSON"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "sortJSON.sortJSON",
+        "title": "Sort JSON"
+      }
+    ]
+  }
+}
