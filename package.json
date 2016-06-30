@@ -25,6 +25,8 @@
     "vscode": "0.10.x",
     "mocha": "~2.3.3"
   },
+  "displayName": "Sort JSON objects",
+  "icon": "resources/icon.svg",
   "engines": {
     "vscode": "0.10.x"
   },
