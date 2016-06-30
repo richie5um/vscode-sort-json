@@ -17,4 +17,5 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 # Example
 
+![Example](resources/usage.gif)
 
