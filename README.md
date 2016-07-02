@@ -19,3 +19,8 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 ![Example](resources/usage.gif)
 
+# Settings
+
+* You can override the sort order (note: this applies to all levels and overrides reverse sort too). Add this to your preferences (settings.json):
+    * `"sortJSON.orderOverride": ["name", "version", "description"]`
+
