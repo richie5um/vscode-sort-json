@@ -73,7 +73,6 @@ describe("Sort-JSON:", function () {
             expect(text).to.equal("{a:1,b:2,c:[4,3]}");
         });
 
-
         it("Reverse Simple", function () {
             var obj = { a: 3, b: 2, c: 1 };
             var sortedObj = sorter.sortJSON(obj, ['desc']);
@@ -83,5 +82,26 @@ describe("Sort-JSON:", function () {
             var text = sorter.jsonToText(jsonParser, sortedObj);
             expect(text).to.equal("{c:1,b:2,a:3}");
         });
+
+        it("Overrides", function () {
+            var obj = { e: 5, c: 3, f: 6, b: 2, d: 4, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['asc'], { orderOverride: ['c', 'd'] });
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{c:3,d:4,a:1,b:2,e:5,f:6}");
+        });
+
+        it("Reverse Overrides", function () {
+            var obj = { e: 5, c: 3, f: 6, b: 2, d: 4, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['desc'], { orderOverride: ['c', 'd'] });
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{c:3,d:4,f:6,e:5,b:2,a:1}");
+        });
+
     });
 });
