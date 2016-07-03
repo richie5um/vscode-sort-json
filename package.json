@@ -47,6 +47,16 @@
                 "command": "sortJSON.sortJSONReverse",
                 "title": "Sort JSON (reverse)"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "properties": {
+                "sortJSON.orderOverride": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Settings to override the sort order"
+                }
+            }
+        }
     }
 }
