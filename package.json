@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
