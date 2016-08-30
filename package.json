@@ -54,8 +54,14 @@
                 "sortJSON.orderOverride": {
                     "type": "array",
                     "default": [],
-                    "description": "Settings to override the sort order"
+                    "description": "Settings to override the sort order (i.e. to be at the start of the order)"
+                },
+                "sortJSON.orderUnderride": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Settings to underride the sort order (i.e. to be at the end of the order)"
                 }
+
             }
         }
     }

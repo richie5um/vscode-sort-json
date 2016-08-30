@@ -103,5 +103,25 @@ describe("Sort-JSON:", function () {
             expect(text).to.equal("{c:3,d:4,f:6,e:5,b:2,a:1}");
         });
 
+        it("Underrides", function () {
+            var obj = { e: 5, c: 3, f: 6, b: 2, d: 4, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['asc'], { orderUnderride: ['c', 'd'] });
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{a:1,b:2,e:5,f:6,c:3,d:4}");
+        });
+
+        it("Reverse Underrides", function () {
+            var obj = { e: 5, c: 3, f: 6, b: 2, d: 4, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['desc'], { orderUnderride: ['c', 'd'] });
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{f:6,e:5,b:2,a:1,c:3,d:4}");
+        });
+
     });
 });
