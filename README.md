@@ -27,4 +27,3 @@ Alphabetically sorts the keys in _selected_ JSON objects.
     * `"sortJSON.orderOverride": ["name", "version", "description"]`
 * You can underride the sort order (note: this applies to all levels and underrides reverse sort too). Add this to your preferences (settings.json):
     * `"sortJSON.orderUnderride": ["dependencies", "devDependencies"]`
-
