@@ -17,6 +17,10 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 * Select a JSON object (note, it uses full lines so ensure the selected lines are a valid JSON object)
 * Run the extension (Cmd+Shift+P => Sort JSON)
 
+# Updates
+
+* 1.8.0: Sorts objects within arrays.
+
 # Example
 
 ![Example](resources/usage.gif)

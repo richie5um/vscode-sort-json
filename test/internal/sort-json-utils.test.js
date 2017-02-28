@@ -123,5 +123,15 @@ describe("Sort-JSON:", function () {
             expect(text).to.equal("{f:6,e:5,b:2,a:1,c:3,d:4}");
         });
 
+        it("Array of Objects", function () {
+            var obj = { c: [ { e: 5, d: 4 }, { g: 7, f: 6 } ], b: 2, a: 1 };
+            var sortedObj = sorter.sortJSON(obj);
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{a:1,b:2,c:[{d:4,e:5},{f:6,g:7}]}");
+        });
+
     });
 });
