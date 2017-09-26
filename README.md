@@ -19,6 +19,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 # Updates
 
+* 1.9.2: Now sorts the whole file if there is no selected text.
 * 1.9.0: Now sorts selected JSON text, even if that is embedded in a JSON object - note, doesn't preserve indents.
 * 1.8.0: Sorts objects within arrays.
 
