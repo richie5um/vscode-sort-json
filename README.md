@@ -6,7 +6,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 > Disclaimer:
 
-> <img src="https://raw.githubusercontent.com/richie5um/vscode-sort-json/master/resources/WorksOnMyMachine.png" width="60" height"60"/>
+![](https://raw.githubusercontent.com/richie5um/vscode-sort-json/master/resources/WorksOnMyMachine.png)
 
 # Install
 
