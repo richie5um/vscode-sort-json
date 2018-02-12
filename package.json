@@ -62,6 +62,34 @@
                     "description": "Settings to underride the sort order (i.e. to be at the end of the order)"
                 }
             }
+        },
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "sortJSON.sortJSON",
+                    "group": "7_modification",
+                    "title": "Sort JSON",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSON",
+                    "group": "7_modification",
+                    "title": "Sort JSON",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (reverse)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON",
+                    "when": "editorLangId == jsonc"
+                } 
+            ]
         }
     }
 }
