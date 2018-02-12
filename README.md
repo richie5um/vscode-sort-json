@@ -19,6 +19,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 # Updates
 
+* 1.11.0: Tries to use normal JSON outputter for some known JSON issues.
 * 1.10.1: Removes (simple) comment lines from JSON before sorting.
 * 1.9.2:  Now sorts the whole file if there is no selected text.
 * 1.9.0:  Now sorts selected JSON text, even if that is embedded in a JSON object - note, doesn't preserve indents.
