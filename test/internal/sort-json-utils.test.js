@@ -134,4 +134,27 @@ describe("Sort-JSON:", function () {
         });
 
     });
+
+    describe("Sort JSON (KeyLength):", function () {
+        it("Simple", function () {
+            var obj = { cc: 3, bbb: 2, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['asc'], {}, 'keyLength');
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{a:1,cc:3,bbb:2}");
+        });
+
+        it("Reverse Simple", function () {
+            var obj = { cc: 3, bbb: 2, a: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['desc'], {}, 'keyLength');
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{bbb:2,cc:3,a:1}");
+        });
+
+    });
 });

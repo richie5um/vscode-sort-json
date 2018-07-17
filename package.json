@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.12.0",
+    "version": "1.13.0",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -35,7 +35,9 @@
     ],
     "activationEvents": [
         "onCommand:sortJSON.sortJSON",
-        "onCommand:sortJSON.sortJSONReverse"
+        "onCommand:sortJSON.sortJSONReverse",
+        "onCommand:sortJSON.sortJSONKeyLength",
+        "onCommand:sortJSON.sortJSONKeyLengthReverse"
     ],
     "contributes": {
         "commands": [
@@ -46,6 +48,14 @@
             {
                 "command": "sortJSON.sortJSONReverse",
                 "title": "Sort JSON (reverse)"
+            },
+            {
+                "command": "sortJSON.sortJSONKeyLength",
+                "title": "Sort JSON (by key length)"
+            },
+            {
+                "command": "sortJSON.sortJSONKeyLengthReverse",
+                "title": "Sort JSON (by reverse key length)"
             }
         ],
         "configuration": {
@@ -87,6 +97,30 @@
                     "command": "sortJSON.sortJSONReverse",
                     "group": "7_modification",
                     "title": "Sort JSON",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONKeyLength",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by key length)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONKeyLength",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by key length)",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONKeyLengthReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse key length)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONKeyLengthReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse key length)",
                     "when": "editorLangId == jsonc"
                 }
             ]
