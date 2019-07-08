@@ -19,6 +19,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 # Updates
 
+* 1.14.0: Sortable alphanumerically (a2 < a10).
 * 1.13.0: Sortable by key length.
 * 1.12.0: Improvements to JSONC comment detecion - thanks 'reporter123'.
 * 1.11.0: Tries to use normal JSON outputter for some known JSON issues.

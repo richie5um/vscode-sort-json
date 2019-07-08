@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.13.0",
+    "version": "1.14.0",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -22,6 +22,7 @@
         "lodash": "^4.13.1"
     },
     "devDependencies": {
+        "chai": "^4.2.0",
         "vscode": "0.10.x",
         "mocha": "~2.3.3"
     },
@@ -37,7 +38,9 @@
         "onCommand:sortJSON.sortJSON",
         "onCommand:sortJSON.sortJSONReverse",
         "onCommand:sortJSON.sortJSONKeyLength",
-        "onCommand:sortJSON.sortJSONKeyLengthReverse"
+        "onCommand:sortJSON.sortJSONKeyLengthReverse",
+        "onCommand:sortJSON.sortJSONAlphaNum",
+        "onCommand:sortJSON.sortJSONAlphaNumReverse"
     ],
     "contributes": {
         "commands": [
@@ -56,6 +59,14 @@
             {
                 "command": "sortJSON.sortJSONKeyLengthReverse",
                 "title": "Sort JSON (by reverse key length)"
+            },
+            {
+                "command": "sortJSON.sortJSONAlphaNum",
+                "title": "Sort JSON (by alphanum)"
+            },
+            {
+                "command": "sortJSON.sortJSONAlphaNumReverse",
+                "title": "Sort JSON (by reverse alphanum)"
             }
         ],
         "configuration": {
@@ -121,6 +132,30 @@
                     "command": "sortJSON.sortJSONKeyLengthReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse key length)",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONAlphaNum",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by alphanum)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONAlphaNum",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by alphanum)",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONAlphaNumReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse alphanum)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONAlphaNumReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse alphanum)",
                     "when": "editorLangId == jsonc"
                 }
             ]

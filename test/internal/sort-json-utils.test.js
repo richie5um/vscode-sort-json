@@ -64,7 +64,7 @@ describe("Sort-JSON:", function () {
         });
 
         it("Array", function () {
-            var obj = { c: [ 4, 3 ], b: 2, a: 1 };
+            var obj = { c: [4, 3], b: 2, a: 1 };
             var sortedObj = sorter.sortJSON(obj);
             expect(sortedObj).to.deep.equal(obj);
 
@@ -124,7 +124,7 @@ describe("Sort-JSON:", function () {
         });
 
         it("Array of Objects", function () {
-            var obj = { c: [ { e: 5, d: 4 }, { g: 7, f: 6 } ], b: 2, a: 1 };
+            var obj = { c: [{ e: 5, d: 4 }, { g: 7, f: 6 }], b: 2, a: 1 };
             var sortedObj = sorter.sortJSON(obj);
             expect(sortedObj).to.deep.equal(obj);
 
@@ -154,6 +154,29 @@ describe("Sort-JSON:", function () {
             var jsonParser = require('JSON5');
             var text = sorter.jsonToText(jsonParser, sortedObj);
             expect(text).to.equal("{bbb:2,cc:3,a:1}");
+        });
+
+    });
+
+    describe("Sort JSON (AlphaNum):", function () {
+        it("Simple", function () {
+            var obj = { a10: 3, a2: 2, a1: 1, b11: 3, b2: 2, b0: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['asc'], {}, 'alphaNum');
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{a1:1,a2:2,a10:3,b0:1,b2:2,b11:3}");
+        });
+
+        it("Reverse Simple", function () {
+            var obj = { a10: 3, a2: 2, a1: 1, b11: 3, b2: 2, b0: 1 };
+            var sortedObj = sorter.sortJSON(obj, ['desc'], {}, 'alphaNum');
+            expect(sortedObj).to.deep.equal(obj);
+
+            var jsonParser = require('JSON5');
+            var text = sorter.jsonToText(jsonParser, sortedObj);
+            expect(text).to.equal("{b11:3,b2:2,b0:1,a10:3,a2:2,a1:1}");
         });
 
     });
