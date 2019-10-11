@@ -19,6 +19,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 # Updates
 
+* 1.17.0: Sort by type (experimental code).
 * 1.16.0: Sort by values (experimental code).
 * 1.15.0: Change algorithm to better cope with JSON quirks.
 * 1.14.0: Sortable alphanumerically (a2 < a10).

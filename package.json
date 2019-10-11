@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.16.0",
+    "version": "1.17.0",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -42,7 +42,9 @@
         "onCommand:sortJSON.sortJSONAlphaNum",
         "onCommand:sortJSON.sortJSONAlphaNumReverse",
         "onCommand:sortJSON.sortJSONValues",
-        "onCommand:sortJSON.sortJSONValuesReverse"
+        "onCommand:sortJSON.sortJSONValuesReverse",
+        "onCommand:sortJSON.sortJSONType",
+        "onCommand:sortJSON.sortJSONTypeReverse"
     ],
     "contributes": {
         "commands": [
@@ -77,6 +79,14 @@
             {
                 "command": "sortJSON.sortJSONValuesReverse",
                 "title": "Sort JSON (by reverse values)"
+            },
+            {
+                "command": "sortJSON.sortJSONType",
+                "title": "Sort JSON (by type)"
+            },
+            {
+                "command": "sortJSON.sortJSONTypeReverse",
+                "title": "Sort JSON (by reverse type)"
             }
         ],
         "configuration": {
@@ -190,6 +200,30 @@
                     "command": "sortJSON.sortJSONValuesReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse values)",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONType",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by type)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONType",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by type)",
+                    "when": "editorLangId == jsonc"
+                },
+                {
+                    "command": "sortJSON.sortJSONTypeReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse type)",
+                    "when": "editorLangId == json"
+                },
+                {
+                    "command": "sortJSON.sortJSONTypeReverse",
+                    "group": "7_modification",
+                    "title": "Sort JSON (by reverse type)",
                     "when": "editorLangId == jsonc"
                 }
             ]
