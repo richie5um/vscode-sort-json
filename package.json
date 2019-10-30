@@ -34,6 +34,10 @@
     "categories": [
         "Other"
     ],
+    "contributors": [
+        "Rich Somerfield (https://github.com/richie5um)",
+        "Jeff Dickey (https://github.com/jdxcode)"
+    ],
     "activationEvents": [
         "onCommand:sortJSON.sortJSON",
         "onCommand:sortJSON.sortJSONReverse",
@@ -92,6 +96,55 @@
         "configuration": {
             "type": "object",
             "properties": {
+                "sortJSON.contextMenu": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "sortJSON": {
+                            "type": "boolean"
+                        },
+                        "sortJSONReverse": {
+                            "type": "boolean"
+                        },
+                        "sortJSONKeyLength": {
+                            "type": "boolean"
+                        },
+                        "sortJSONKeyLengthReverse": {
+                            "type": "boolean"
+                        },
+                        "sortJSONAlphaNum": {
+                            "type": "boolean"
+                        },
+                        "sortJSONAlphaNumReverse": {
+                            "type": "boolean"
+                        },
+                        "sortJSONValues": {
+                            "type": "boolean"
+                        },
+                        "sortJSONValuesReverse": {
+                            "type": "boolean"
+                        },
+                        "sortJSONType": {
+                            "type": "boolean"
+                        },
+                        "sortJSONTypeReverse": {
+                            "type": "boolean"
+                        }
+                    },
+                    "default": {
+                        "sortJSON": true,
+                        "sortJSONReverse": true,
+                        "sortJSONKeyLength": true,
+                        "sortJSONKeyLengthReverse": true,
+                        "sortJSONAlphaNum": true,
+                        "sortJSONAlphaNumReverse": true,
+                        "sortJSONValues": true,
+                        "sortJSONValuesReverse": true,
+                        "sortJSONType": true,
+                        "sortJSONTypeReverse": true
+                    },
+                    "description": "Which editor context menu commands to show"
+                },
                 "sortJSON.orderOverride": {
                     "type": "array",
                     "default": [],
@@ -110,121 +163,61 @@
                     "command": "sortJSON.sortJSON",
                     "group": "7_modification",
                     "title": "Sort JSON",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSON",
-                    "group": "7_modification",
-                    "title": "Sort JSON",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSON"
                 },
                 {
                     "command": "sortJSON.sortJSONReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (reverse)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONReverse",
-                    "group": "7_modification",
-                    "title": "Sort JSON",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONReverse"
                 },
                 {
                     "command": "sortJSON.sortJSONKeyLength",
                     "group": "7_modification",
                     "title": "Sort JSON (by key length)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONKeyLength",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by key length)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONKeyLength"
                 },
                 {
                     "command": "sortJSON.sortJSONKeyLengthReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse key length)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONKeyLengthReverse",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by reverse key length)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONKeyLengthReverse"
                 },
                 {
                     "command": "sortJSON.sortJSONAlphaNum",
                     "group": "7_modification",
                     "title": "Sort JSON (by alphanum)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONAlphaNum",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by alphanum)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONAlphaNum"
                 },
                 {
                     "command": "sortJSON.sortJSONAlphaNumReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse alphanum)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONAlphaNumReverse",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by reverse alphanum)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONAlphaNumReverse"
                 },
                 {
                     "command": "sortJSON.sortJSONValues",
                     "group": "7_modification",
                     "title": "Sort JSON (by values)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONValues",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by values)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONValues"
                 },
                 {
                     "command": "sortJSON.sortJSONValuesReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse values)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONValuesReverse",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by reverse values)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONValuesReverse"
                 },
                 {
                     "command": "sortJSON.sortJSONType",
                     "group": "7_modification",
                     "title": "Sort JSON (by type)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONType",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by type)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONType"
                 },
                 {
                     "command": "sortJSON.sortJSONTypeReverse",
                     "group": "7_modification",
                     "title": "Sort JSON (by reverse type)",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "sortJSON.sortJSONTypeReverse",
-                    "group": "7_modification",
-                    "title": "Sort JSON (by reverse type)",
-                    "when": "editorLangId == jsonc"
+                    "when": "editorLangId =~ /(json|jsonc)/ && config.sortJSON.contextMenu.sortJSONTypeReverse"
                 }
             ]
         }
