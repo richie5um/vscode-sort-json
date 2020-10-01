@@ -17,7 +17,7 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 
 ### Context Menu
 
-If there are too many entries in the Context Menu, then you can modify which get show by adding (and editing) this this to your VSCode preferences:
+If there are too many entries in the Context Menu, then you can modify which get shown by adding (and editing) this this to your VSCode preferences:
 
     "sortJSON.contextMenu": {
         "sortJSON": false,
