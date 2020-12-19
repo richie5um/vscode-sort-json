@@ -17,9 +17,26 @@ Alphabetically sorts the keys in _selected_ JSON objects.
 - Select a JSON object (note, it uses full lines so ensure the selected lines are a valid JSON object)
 - Run the extension (Cmd+Shift+P => Sort JSON)
 
-## Updates
+### Context Menu
 
-- 1.18.0: Works as a formatter also.
+If there are too many entries in the Context Menu, then you can modify which get shown by adding (and editing) this to your VSCode preferences:
+
+    "sortJSON.contextMenu": {
+        "sortJSON": false,
+        "sortJSONAlphaNum": false,
+        "sortJSONAlphaNumReverse": false,
+        "sortJSONKeyLength": false,
+        "sortJSONKeyLengthReverse": false,
+        "sortJSONReverse": false,
+        "sortJSONType": false,
+        "sortJSONTypeReverse": false,
+        "sortJSONValues": false,
+        "sortJSONValuesReverse": false
+    }
+
+# Updates
+
+- 1.18.0: Make it more a formatter, than separate command.
 - 1.17.0: Sort by type (experimental code).
 - 1.16.0: Sort by values (experimental code).
 - 1.15.0: Change algorithm to better cope with JSON quirks.
@@ -53,7 +70,7 @@ There's a vscode setting for formatters (`settings.json`):
   }
 ```
 
-But you can also selectively enable/disable this formatter with:
+But you can also selectively enable/disable this formatter with (`settings.json`):
 
 ```json
 {
