@@ -14,8 +14,9 @@
         "statusBar.foreground": "#15202b",
         "activityBar.activeBackground": "#fbed80",
         "activityBar.activeBorder": "#06b9a5",
-        "statusBar.border": "#f9e64f",
-        "titleBar.border": "#f9e64f"
+        "editorGroup.border": "#fbed80",
+        "panel.border": "#fbed80",
+        "sideBar.border": "#fbed80"
     },
     "peacock.color": "#f9e64f"
 }
