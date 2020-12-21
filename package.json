@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.17.0",
+    "version": "1.18.0",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -48,7 +48,8 @@
         "onCommand:sortJSON.sortJSONValues",
         "onCommand:sortJSON.sortJSONValuesReverse",
         "onCommand:sortJSON.sortJSONType",
-        "onCommand:sortJSON.sortJSONTypeReverse"
+        "onCommand:sortJSON.sortJSONTypeReverse",
+        "onLanguage:json"
     ],
     "contributes": {
         "commands": [
