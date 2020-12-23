@@ -155,6 +155,18 @@
                     "type": "array",
                     "default": [],
                     "description": "Settings to underride the sort order (i.e. to be at the end of the order)"
+                },
+                "sortJSON.excludeFiles": {
+                    "type": "array",
+                    "default": [
+                        "package.json"
+                    ],
+                    "description": "Settings to exclude some files for which the sortJSON shouldn't get triggered"
+                },
+                "sortJSON.excludePaths": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Settings to exclude some paths for which the sortJSON shouldn't get triggered"
                 }
             }
         },
