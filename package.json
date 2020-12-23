@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.19.0",
+    "version": "1.19.1",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -155,6 +155,18 @@
                     "type": "array",
                     "default": [],
                     "description": "Settings to underride the sort order (i.e. to be at the end of the order)"
+                },
+                "sortJSON.excludeFiles": {
+                    "type": "array",
+                    "default": [
+                        "package.json"
+                    ],
+                    "description": "Settings to exclude some files for which the sortJSON shouldn't get triggered"
+                },
+                "sortJSON.excludePaths": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Settings to exclude some paths for which the sortJSON shouldn't get triggered"
                 }
             }
         },
