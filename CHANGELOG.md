@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.19.1]
+
+- Enable 'Formatter' - so can do format on save :) (thanks JerryGreen). Excluded Paths (thanks Sri352).
+
 ## [1.18.0]
 
 - Make it more a formatter, than separate command.
