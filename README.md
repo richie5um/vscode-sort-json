@@ -36,6 +36,7 @@ If there are too many entries in the Context Menu, then you can modify which get
 
 # Updates
 
+- 1.19.2: Fixed sort files error [#45](https://github.com/richie5um/vscode-sort-json/issues/45).
 - 1.19.1: Enable 'Formatter' - so can do format on save :) (thanks JerryGreen). Excluded Paths (thanks Sri352).
 - 1.18.0: Make it more a formatter, than separate command.
 - 1.17.0: Sort by type (experimental code).
