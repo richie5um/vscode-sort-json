@@ -24,6 +24,17 @@ describe("Sort-JSON:", function () {
             var text = sorter.jsonToText(jsonParser, obj);
             expect(text).to.equal("{c:3,b:2,a:1}");
         });
+
+        it("JSONC", function () {
+            const {
+                parse,
+                stringify
+            } = require('comment-json');
+            var jsonParser = { parse, stringify };
+            var obj = { c: 3, b: 2, a: 1 };
+            var text = sorter.jsonToText(jsonParser, obj);
+            expect(text).to.equal("{\"c\":3,\"b\":2,\"a\":1}");
+        });
     });
 
     describe("Text to JSON:", function () {
@@ -37,6 +48,17 @@ describe("Sort-JSON:", function () {
         it("JSON5", function () {
             var jsonParser = require('JSON5');
             var text = "{c:3,b:2,a:1}";
+            var obj = sorter.textToJSON(jsonParser, text);
+            expect(obj).to.deep.equal({ c: 3, b: 2, a: 1 });
+        });
+
+        it("JSONC", function () {
+            const {
+                parse,
+                stringify
+            } = require('comment-json');
+            var jsonParser = { parse, stringify };
+            var text = "{\"c\":3,\"b\":2,\"a\":1}";
             var obj = sorter.textToJSON(jsonParser, text);
             expect(obj).to.deep.equal({ c: 3, b: 2, a: 1 });
         });
@@ -179,5 +201,46 @@ describe("Sort-JSON:", function () {
             expect(text).to.equal("{b11:3,b2:2,b0:1,a10:3,a2:2,a1:1}");
         });
 
+    });
+
+    describe("Sort with Comments:", function () {
+        it("JSONC", function () {
+            const {
+                parse,
+                stringify
+            } = require('comment-json');
+            var jsonParser = { parse, stringify };
+            var text = `// Hello
+                {
+                    // Bob
+                    \"b\":2,
+                    /* Tom */
+                    \"c\":3,
+                    \"a\":1
+                    /* Sam */
+                }
+            `;
+
+            var expected = [
+                '// Hello',
+                '{',
+                '  \"a\": 1,',
+                '  /* Sam */// Bob',
+                '  \"b\": 2,',
+                '  /* Tom */',
+                '  \"c\": 3',
+                '}'
+            ].join('\n');
+
+            var obj = sorter.textToJSON(jsonParser, text);
+            var sortedObj = sorter.sortJSON(obj);
+            var text = sorter.jsonToText(jsonParser, sortedObj, 2);
+            expect(text).to.equal(expected);
+
+            // console.log(Object.getOwnPropertySymbols(obj));
+            // console.log(stringify(obj, null, 2));
+            // console.log(Object.getOwnPropertySymbols(sortedObj));
+            // console.log(stringify(sortedObj, null, 2));
+        });
     });
 });

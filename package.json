@@ -1,6 +1,6 @@
 {
     "name": "vscode-sort-json",
-    "version": "1.19.2",
+    "version": "1.20.0",
     "description": "Sorts the keys within JSON objects",
     "publisher": "richie5um2",
     "author": "Rich Somerfield",
@@ -18,6 +18,7 @@
         "test": "mocha test/internal"
     },
     "dependencies": {
+        "comment-json": "^4.1.0",
         "json5": "^0.5.0",
         "lodash": "^4.17.13"
     },
