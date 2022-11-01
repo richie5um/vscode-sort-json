@@ -24,8 +24,8 @@
     },
     "devDependencies": {
         "chai": "^4.2.0",
-        "vscode": "0.10.x",
-        "mocha": "~2.3.3"
+        "vscode": "1.1.x",
+        "mocha": "~10.1.0"
     },
     "displayName": "Sort JSON objects",
     "icon": "resources/Icon.png",
